@@ -20,7 +20,7 @@ void updateGhost(float px, float pz) {
 }
 
 // TODO: Implementasikan animasi koin berputar (Rotasi) dan interaksi ambil koin 
-void updateItems(float px, float pz) {
+void updateItems() {
     // glRotatef(angle, 0, 1, 0);
     // Jika jarak koin ke pemain < threshold, score++ dan isActive = false
 }

@@ -13,7 +13,10 @@ void loadTextures() {
 }
 
 // TODO: Implementasikan Lighting (GL_LIGHT0 untuk Senter, GL_LIGHT1 dst untuk Obor) 
-void setupLighting(float px, float py, float pz, float dx, float dz) {
+void setupLighting() {
+    // Placeholder sampai data kamera dihubungkan ke modul ini.
+    float px = 0.0f, py = 1.7f, pz = 5.0f;
+    float dx = 0.0f, dz = -1.0f;
     glEnable(GL_LIGHTING);
     
     // Senter (Spotlight): Posisinya mengikuti kamera
