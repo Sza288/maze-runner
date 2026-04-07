@@ -11,20 +11,37 @@
 // Inisialisasi Objek Global
 Camera playerCam = {0.0f, 1.7f, 5.0f, 0.0f, 0.0f};
 
-void display() {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-    glutInitWindowSize(800, 600);
-    glutCreateWindow("GTI A1 Maze Runner 2026"); 
+static void setupScene() {
+    glClearColor(0.03f, 0.03f, 0.06f, 1.0f);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_COLOR_MATERIAL);
+    glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+
+    glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
+    gluPerspective(60.0, (double)WINDOW_WIDTH / (double)WINDOW_HEIGHT, 0.1, 100.0);
+    glMatrixMode(GL_MODELVIEW);
+}
+
+static void reshape(int w, int h) {
+    if (h <= 0) h = 1;
+    glViewport(0, 0, w, h);
+
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(60.0, (double)w / (double)h, 0.1, 100.0);
+    glMatrixMode(GL_MODELVIEW);
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     playerCam.apply();
     setupLighting(); // Render Lighting 
     
     drawMaze();      // Render Lingkungan
     updateItems();   // Render Koin & Kunci
-    
-    // TODO: Render HUD di sini menggunakan Proyeksi Ortografis
+    drawHUD();
     
     glutSwapBuffers();
 }
@@ -37,8 +54,15 @@ void timer(int v) {
 
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
-    // TODO: Setup window dan panggil fungsi init dari modul lain
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+    glutInitWindowPosition(80, 50);
+    glutCreateWindow("GTI A1 Maze Runner 2026");
+
+    setupScene();
+
     glutDisplayFunc(display);
+    glutReshapeFunc(reshape);
     glutTimerFunc(0, timer, 0);
     glutMainLoop();
     return 0;
