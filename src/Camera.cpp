@@ -8,6 +8,8 @@
 #include <math.h>
 #include <stdio.h>
 
+Camera playerCam = {3.0f, 1.6f, 3.0f, 3.9269907f, 0.0f};
+
 static void drawText2D(float x, float y, const char* text) {
     glRasterPos2f(x, y);
     for (const char* p = text; *p != '\0'; ++p) {

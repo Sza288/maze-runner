@@ -18,6 +18,10 @@ struct Camera {
     void apply();  // TODO: Implementasi gluLookAt
 };
 
-// TODO: Tambahkan fungsi untuk switch antara Proyeksi Perspektif dan Ortografis (HUD) 
+// Kamera pemain utama yang dipakai modul rendering lain (mis. lighting).
+extern Camera playerCam;
+
+// Render HUD menggunakan proyeksi ortografis.
+void drawHUD();
 
 #endif
