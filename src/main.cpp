@@ -3,10 +3,10 @@
 // Tanggal Dibuat : 24 Maret 2026
 
 #include <GL/glut.h>
-#include "Config.h"
-#include "Camera.h"
-#include "Environment.h"
-#include "Entity.h"
+#include "../include/Config.h"
+#include "../include/Camera.h"
+#include "../include/Environment.h"
+#include "../include/Entity.h"
 
 // Inisialisasi Objek Global
 Camera playerCam = {0.0f, 1.7f, 5.0f, 0.0f, 0.0f};
