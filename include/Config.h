@@ -22,6 +22,11 @@ extern bool isGhostTriggered;
 // Map Data
 extern int maze[10][10];
 
+// Backward-compatible aliases used by rendering modules.
+const int MAZE_WIDTH = 10;
+const int MAZE_HEIGHT = 10;
+#define mazeMatrix maze
+
 // Constants (Bisa langsung di header karena 'const')
 const float PLAYER_SPEED = 0.1f;
 const float GHOST_SPEED = 0.05f;
