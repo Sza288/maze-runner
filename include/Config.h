@@ -20,12 +20,14 @@ extern bool isGhostTriggered;
 // TODO: Tambahkan threshold jarak untuk trigger munculnya hantu
 
 // Map Data
-extern int maze[10][10];
+#define MAZE_WIDTH  20
+#define MAZE_HEIGHT 20
 
-// Backward-compatible aliases used by rendering modules.
-const int MAZE_WIDTH = 10;
-const int MAZE_HEIGHT = 10;
-#define mazeMatrix maze
+extern int mazeMatrix[MAZE_HEIGHT][MAZE_WIDTH];
+void generateMaze();
+
+// Backward-compatible alias used by older logic.
+#define maze mazeMatrix
 
 // Constants (Bisa langsung di header karena 'const')
 const float PLAYER_SPEED = 0.1f;

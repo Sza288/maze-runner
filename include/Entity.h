@@ -7,10 +7,23 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include "entity/Ghost.h"
+#include "entity/Coin.h"
+#include "entity/Key.h"
+
 struct Entity {
     float x, y, z;
     bool isActive;
 };
+
+// Inisialisasi data entity (coin/key/ghost)
+void initEntities();
+
+// Sinkronkan posisi pemain untuk interaksi item/ghost
+void syncPlayerPosition(float x, float z);
+
+// Cek collision pemain vs dinding
+bool checkCollision(float nextX, float nextZ);
 
 // TODO: Implementasi pergerakan Hantu mengejar pemain (Translasi) 
 void updateGhost(float playerX, float playerZ);

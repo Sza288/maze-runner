@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=5
+UnitCount=12
 
 [VersionInfo]
 Major=1
@@ -51,7 +51,7 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=src/main.cpp
+FileName=src\main.cpp
 CompileCpp=1
 Folder=src
 Compile=1
@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=src/Camera.cpp
+FileName=src\Camera.cpp
 CompileCpp=1
 Folder=src
 Compile=1
@@ -71,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=src/Entity.cpp
+FileName=src\Entity.cpp
 CompileCpp=1
 Folder=src
 Compile=1
@@ -81,7 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=src/Environment.cpp
+FileName=src\Config.cpp
 CompileCpp=1
 Folder=src
 Compile=1
@@ -91,9 +91,79 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=src/Config.cpp
+FileName=include\Camera.h
 CompileCpp=1
-Folder=src
+Folder=maze-runner
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=include\Config.h
+CompileCpp=1
+Folder=maze-runner
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=include\Entity.h
+CompileCpp=1
+Folder=maze-runner
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=include\Environment.h
+CompileCpp=1
+Folder=maze-runner
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=include\environment\Environment.h
+CompileCpp=1
+Folder=maze-runner
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit10]
+FileName=include\entity\Coin.h
+CompileCpp=1
+Folder=maze-runner
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit11]
+FileName=include\entity\Ghost.h
+CompileCpp=1
+Folder=maze-runner
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit12]
+FileName=include\entity\Key.h
+CompileCpp=1
+Folder=maze-runner
 Compile=1
 Link=1
 Priority=1000
